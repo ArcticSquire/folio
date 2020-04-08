@@ -1,4 +1,7 @@
 /*
+==================================
+======== Animate sections ========
+==================================
 Adapted from: https://alligator.io/js/intersection-observer/
 */
 
@@ -21,3 +24,25 @@ observer = new IntersectionObserver((entries) => {
 animate.forEach(animate => {
   observer.observe(animate);
 });
+
+
+
+/*
+==================================
+======== Show more button ========
+==================================
+*/
+function showMore() {
+  var x = document.getElementsByClassName("hidden");
+	
+  var i;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "block";
+	  
+  document.getElementById("showMore").style.display = "none";
+} 
+	
+	
+
+};
+
