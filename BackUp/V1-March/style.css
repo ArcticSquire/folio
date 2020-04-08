@@ -24,13 +24,13 @@ Blue's & Yellow: https://coolors.co/403f4c-deeae4-eca72c-075173-516eff
 html {
   font-size: 100%;
 }
-.menu-bar {
-  
+header {
+  padding:16px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
-.menu-bar ul li {
+header ul li {
   list-style-type: none; 
   display:inline;
   padding:8px 8px;
@@ -46,12 +46,11 @@ body {
   font-size: 1rem;
   margin: 0 auto;
   height: 2500px;
-  max-width:1080px;
-  padding: 8px;
+  max-width:600px;
 }
 section {
   height: auto;
-  
+  min-height:300px;
   width: 100%;
   padding:24px 0px;
   display: flex;
@@ -68,7 +67,6 @@ section {
 .hero-section {
   background-color: var(--off-white);
   border-radius:8px;
-  min-height:200px;
 }
 
 /* 
