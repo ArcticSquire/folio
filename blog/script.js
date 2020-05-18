@@ -1,23 +1,51 @@
-/* Url parameter help: https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript */
-const urlParams = new URLSearchParams(window.location.search);
-const myParam = urlParams.get('myParam');
 
+window.onload = function() {
 
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+var id;
+	
+	
+function getAllUrlParams(url) {
+  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+  var obj = {};
+
+  if (queryString) {
+    queryString = queryString.split('#')[0];
+    var arr = queryString.split('&');
+
+    for (var i = 0; i < arr.length; i++) {
+      var a = arr[i].split('=');
+      var paramName = a[0];
+      var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
+
+      paramName = paramName.toLowerCase();
+      if (typeof paramValue === 'string') paramValue = paramValue.toLowerCase();
+
+      if (paramName.match(/\[(\d+)?\]$/)) {
+        var key = paramName.replace(/\[(\d+)?\]/, '');
+        if (!obj[key]) obj[key] = [];
+
+        if (paramName.match(/\[\d+\]$/)) {
+          var index = /\[(\d+)\]/.exec(paramName)[1];
+          obj[key][index] = paramValue;
+        } else {
+          obj[key].push(paramValue);
+        }
+      } else {
+        if (!obj[paramName]) {
+          obj[paramName] = paramValue;
+        } else if (obj[paramName] && typeof obj[paramName] === 'string'){
+          obj[paramName] = [obj[paramName]];
+          obj[paramName].push(paramValue);
+        } else {
+          obj[paramName].push(paramValue);
+        }
+      }
+    }
+  }
+
+  return obj;
 }
-
-var foo = getParameterByName('foo'); // "lorem"
-
-document.getElementById("dataurl").innerHTML = foo; 
-
-
+	
 
 /* 
 Based on:https://github.com/jsoma/tabletop
@@ -38,21 +66,13 @@ function init() {
   });
 }
 
-var loadFrom = 1; // = Last row 
+var id = getAllUrlParams();
+var loadFrom = id; // = Last row 
 var loadTo = 5; // from the lastrow
 
-// Get button increment working
-/* 
-function incrementLoad() {
-  var inc = 5;
-  var loadFrom = 1 + inc;
-  var loadTo = 3 + inc;
-        document.getElementById("amount").value = loadFrom;
-  init();
-    }
-    */
-
-
+	console.log(id);
+console.log(loadFrom);
+	
 
 function showInfo(data) {
   var loadNum = data.length - (loadTo); //accounts for header being row 1
@@ -133,3 +153,8 @@ function showInfo(data) {
 
 // call the function
 init();
+	
+	
+	
+	
+}/* window.onload */
