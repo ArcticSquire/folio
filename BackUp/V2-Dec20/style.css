@@ -1,0 +1,302 @@
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+/* 
+https://coolors.co/edffec-251d2b-61e786-5a5766-9792e3
+https://coolors.co/d3ffd3-00022b-25f976-2a4266-6a7ee2
+https://coolors.co/adffad-000151-00ff61-244d8c-516eff
+Blue's & Yellow: https://coolors.co/403f4c-deeae4-eca72c-075173-516eff
+*/
+:root {
+  --transform-blue: #516eff;
+  --off-white: #f7f7ff;
+  --body-text:#455C69;
+  --dark-text:#131112;
+}
+
+html {
+  font-size: 100%;
+}
+.menu-bar {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-bar ul li {
+  list-style-type: none; 
+  display:inline;
+  padding:8px 8px;
+}
+svg {
+  height:auto;
+  width:64px;
+  fill:var(--dark-text);
+}
+body {
+  color:var(--body-text);
+  line-height: 1.4;
+  font-size: 1rem;
+  margin: 0 auto;
+  height: 2500px;
+  max-width:1080px;
+  padding: 8px;
+}
+section {
+  height: auto;
+  width: 100%;
+  padding:24px 0px;
+  margin:24px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+button {
+	background:var(--transform-blue);
+	color:#FFFFFF;
+	font-size: 100%;
+	outline:none;
+	overflow: visible;
+	-webkit-appearance: button;
+	padding:8px 16px;
+	border:none;
+}
+.hidden {
+	display:none;
+}
+
+/* 
+==============================
+======== Hero Section ========
+==============================
+*/
+.hero-section {
+  background-color: var(--off-white);
+  border-radius:8px;
+}
+.hero-section--ilustration {
+  padding: 16px;
+}
+.text-full {
+	max-width: 600px;
+	margin:auto;
+}
+/* 
+===============================
+======== folio section ========
+===============================
+*/
+.folio__img {
+  width:200px;
+  padding:16px;
+}
+.folio__img img {
+  max-height:164px;
+  display:block;
+  margin:auto;
+}
+
+/* 
+============================
+======== CV Section ========
+============================
+*/
+.cv-section, .flex-col {
+  align-items: flex-start;
+  flex-flow: column;
+}
+.cv__part{
+  padding:32px 24px;
+}
+
+/* 
+======================
+======== Misc ========
+======================
+*/
+h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--transform-blue);
+}
+h3 {
+ padding-top:8px;
+}
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+.line-break {
+  width: 100%;
+}
+
+/* ===== Active Animations ===== */
+.active .transform__box {
+  transition: scale ease-in-out 400ms;
+  scale: 1;
+}
+.active .transform__sizeText {
+  opacity: 1;
+}
+.active .transform__inner {
+  width: 100%;
+  transition: all ease-in-out 800ms;
+  transition-delay: 400ms;
+  animation-name: type-blink;
+  -webkit-animation-name: type-blink;
+  animation-duration: 800ms;
+}
+.active .transform {
+  color: #00a1f4;
+}
+.active.fade-in-up {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both
+}
+
+/* 
+===========================
+====== Transform-box ======
+===========================
+*/
+.transform {
+  color: var(--transform-blue);
+	order: 1;
+}
+.transform:hover .transform__inner {
+  border-bottom: 1px solid var(--transform-blue);
+}
+.transform__box {
+  padding: 24px 24px;
+  border: 2px solid var(--transform-blue);
+  position: relative;
+  background:#;
+  scale: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Handles */
+.transform__box:after,
+.transform__box:before,
+.transform__inner:before,
+.transform__inner:after {
+  height: 4px;
+  width: 4px;
+  background: #ffffff;
+  border: 2px solid var(--transform-blue);
+  position: absolute;
+  content: "";
+}
+.transform__inner {
+  color: var(--dark-text);
+  width: 0px;
+  font-size: 2rem;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 2px solid rgba(0, 0, 0, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  font-weight: bold;
+  white-space: nowrap;
+}
+.transform__inner:before {
+  top: -5px;
+  left: -5px;
+}
+.transform__inner:after {
+  bottom: -5px;
+  left: -5px;
+}
+.transform__box:before {
+  top: -5px;
+  right: -5px;
+}
+.transform__box:after {
+  bottom: -5px;
+  right: -5px;
+}
+
+
+
+ @media only screen and (max-width : 500px ){
+	.hero-section {
+		flex-flow: column-reverse;
+	}
+}
+
+/* 
+===========================
+======== Animation ========
+===========================
+*/
+@keyframes type-blink {
+  0% {
+    border-right: 2px solid var(--hero-text);
+  }
+  20% {
+    border-right: 2px solid rgba(0, 0, 0, 0);
+  }
+  40% {
+    border-right: 2px solid var(--hero-text);
+  }
+  60% {
+    border-right: 2px solid rgba(0, 0, 0, 0);
+  }
+  80% {
+    border-right: 2px solid var(--hero-text);
+  }
+  100% {
+    border-right: 2px solid rgba(0, 0, 0, 0);
+  }
+}
+@-webkit-keyframes type-blink {
+  0% {
+    border-right: 2px solid var(--hero-text);
+  }
+  20% {
+    border-right: 2px solid rgba(0, 0, 0, 0);
+  }
+  40% {
+    border-right: 2px solid var(--hero-text);
+  }
+  60% {
+    border-right: 2px solid rgba(0, 0, 0, 0);
+  }
+  80% {
+    border-right: 2px solid var(--hero-text);
+  }
+  100% {
+    border-right: 2px solid rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,32px,0)
+    }
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,32px,0)
+    }
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}

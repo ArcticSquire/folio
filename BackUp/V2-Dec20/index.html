@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Hi, I'm Jordan</title>
+  <link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+</head>
+<body>
+
+<section class="menu-bar">
+  <div class="logo"><svg viewBox="0 0 288 160" xmlns="http://www.w3.org/2000/svg">
+<path d="m160 7.6294e-6c0 21.011-4.139 41.817-12.179 61.229-8.041 19.412-19.827 37.05-34.684 51.908-14.857 14.857-32.496 26.643-51.908 34.684-19.412 8.04-40.218 12.179-61.229 12.179l2.7975e-6 -64c12.607 0 25.09-2.4831 36.738-7.3076 11.647-4.8244 22.23-11.896 31.145-20.81 8.9144-8.9145 15.986-19.497 20.81-31.145 4.8245-11.647 7.3076-24.131 7.3076-36.738h64z"/>
+<path d="m0 7.6294e-6h96v64h-96v-64z"/>
+<path d="m128 160c0-21.012 4.139-41.817 12.179-61.229 8.041-19.412 19.827-37.05 34.684-51.908s32.496-26.643 51.908-34.684c19.412-8.0408 40.218-12.179 61.229-12.179v64c-12.607 0-25.09 2.4831-36.738 7.3076-11.647 4.8244-22.23 11.896-31.144 20.81-8.915 8.9143-15.986 19.497-20.81 31.144-4.825 11.648-7.308 24.131-7.308 36.738h-64z"/>
+<path d="m288 160h-96v-64h96v64z"/>
+</svg></div>        
+    <ul>
+      <li><a href="#folio">Work</a></li>
+      <li><a href="mailto:hellojconnor@gmail.com">Email</a></li>
+      <li><a href="#cv">CV</a></li>
+  </ul>
+</section>
+
+
+<main>
+ 
+  
+    
+   <section class="hero-section">
+	   
+	   <div class="hero-section--ilustration"><img alt="Me" src="./images/Illustration/Jordan-White-Fill-Mouse.svg"></div>
+	   
+     <div class="transform animate">
+        <div class="transform__box">
+          <div class="transform__inner" contenteditable="true">Hi, I'm Jordan</div>
+        </div>
+        <!--<div class="transform__sizeText"></div>-->
+     </div>
+  </section>
+  
+	<section class="text-full">
+	<p>Hi I'm Jordan, a Digital Designer from Lancashire (UK). I've completed work on a cornucopia of projects including Branding and Web Design.
+		I love discussing ideas and exploring new tools to build them.</p></section>
+	
+  
+  <section id="folio" class="folio-section">
+    <div class="folio__img"><img alt="Your Home" src="./images/svg-logos/Your-Home.svg"></div>
+    <div class="folio__img"><img alt="Wine" src="./images/svg-logos/Wine1.svg"></div>
+    <div class="folio__img"><img alt="Mouse Made" src="./images/svg-logos/Mouse-Made.svg"></div>
+    <div class="folio__img"><img alt="Donate" src="./images/svg-logos/Donate.svg"></div>
+	  <div class="line-break"></div>
+	  	<button id="showMore" onclick="showMore()">Show more</button>
+	  <div class="line-break"></div>
+	  
+		<div class="folio__img hidden"><img alt="Donate" src="./images/svg-logos/Conker.svg"></div>
+		<div class="folio__img hidden"><img alt="Donate" src="./images/svg-logos/Lucky-Click.svg"></div>
+		<div class="folio__img hidden"><img alt="Donate" src="./images/svg-logos/Orchid.svg"></div>
+		<div class="folio__img hidden"><img alt="Donate" src="./images/svg-logos/Daisy.svg"></div>
+		<div class="folio__img hidden"><img alt="Donate" src="./images/svg-logos/53.svg"></div>
+		<div class="folio__img hidden"><img alt="Donate" src="./images/svg-logos/Anchor.svg"></div>
+		<div class="folio__img hidden"><img alt="Donate" src="./images/svg-logos/Kiss.svg"></div>
+		<div class="folio__img hidden"><img alt="Donate" src="./images/svg-logos/Open-Pearl.svg"></div>
+	   
+  </section>
+  
+	
+  <section class="flex-col">
+		<h2>Recent Websites</h2>
+		<ul>
+			<li><a href="https://mollymarshall.co.uk/">MollyMarshall.co.uk</a></li>
+			<li><a href="https://instanthousecall.com/">InstantHousecall.com</a></li>
+		</ul>
+	</section>
+  
+  
+  <section id="cv" class="cv-section">
+ 
+      <div class="cv__part">
+        <h2 class="cv__heading">Skills</h2>
+        <p>Branding / Identity</p>
+        <p>Web Design</p>
+        <p>HTML, CSS, JS (learning)</p>
+      </div>
+    
+    <div class="cv__part">
+      <h2 class="cv__heading">Experience</h2>
+      <h3>Bauer Media</h3>
+      <p>Commercial Digital Designer</p>
+      <p>2016 - Present</p>
+      <h3>Freelance designer</h3>
+      <p>2015</p>
+    </div>
+
+
+    <div class="cv__part animate once fade-in-up">
+      <h2 class="cv__heading">EDUCATION</h2>
+      <h3>Creative Content and Production</h3>
+      <p>AIM Awards level 3</p>
+      <p>2019</p>
+      <h3>University of Central Lancashire</h3>
+      <p>BA in Graphic Design (Honours in Digital Design)</p>
+      <p>2015</p>
+    </div>
+    
+  </section>
+</body>
+  
+</main>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
